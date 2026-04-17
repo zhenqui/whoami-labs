@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Artemis</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Artemis</h1><br/><p>QUE ES DOCKER Y COMO LO INSTALO</p><p></p><p><div class="codebox"><pre><span style="color:#bf2e5e;font-weight:400">sudo</span> apt update<br /><span style="color:#bf2e5e;font-weight:400">sudo</span> apt install -y docker.io<br /><span style="color:#bf2e5e;font-weight:400">sudo</span> systemctl enable docker --now<br /><span style="color:#bf2e5e;font-weight:400">sudo</span> usermod -aG docker <span style="color:#9755b3;font-weight:400">$USER</span></pre></div></p><p>COMO EJECUTAR UN LABORATORIO</p><p></p><p><div class="codebox"><pre><span style="color:#49aee6;font-weight:400"># 1. Descomprimir el archivo</span><br /><span style="color:#bf2e5e;font-weight:400">tar</span> -xvf transportadora_rapida.tar<br /><br /><span style="color:#49aee6;font-weight:400"># 2. Entrar a la carpeta</span><br /><span style="color:#bf2e5e;font-weight:400">cd</span> transportadora_rapida<br /><br /><span style="color:#49aee6;font-weight:400"># 3. Ejecutar el laboratorio con el script incluido</span><br /><span style="color:#bf2e5e;font-weight:400">sudo</span> bash startlab.sh transportadora_rapida.tar</pre></div></p><p></p><p>SE INICIA EL LABORATORIO EN EL DOCKER</p><p></p><p><img src="images/15-1.png" alt="images/15-1.png" /></p></div>
+</body>
+</html>
