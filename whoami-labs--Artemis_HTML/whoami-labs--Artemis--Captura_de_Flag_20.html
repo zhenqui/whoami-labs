@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Captura de Flag</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Captura de Flag</h1><br/><p>SE MEJORA SHELL</p><p></p><p>PASO 1</p><p></p><p><div class="codebox"><pre>python3 -c <span style="color:#5ebdab;font-weight:400">&#39;import pty; pty.spawn(&quot;/bin/bash&quot;)&#39;</span><br /><br />bash-5.0# <span style="color:#bf2e5e;font-weight:400">whoami</span><br /><span style="color:#bf2e5e;font-weight:400">whoami</span><br />root<br />bash-5.0#     </pre></div></p><p></p><p>PASO 2</p><p><div class="codebox"><pre> <span style="color:#bf2e5e;font-weight:400">export</span> <span style="color:#9755b3;font-weight:400">TERM</span>=xterm</pre></div></p><p>PASO 3</p><p></p><p>CTRL + Z </p><p></p><p>PASO 4</p><p><div class="codebox"><pre>stty raw -echo<span style="color:#bf2e5e;font-weight:400">;</span> <span style="color:#bf2e5e;font-weight:400">fg</span></pre></div></p><p>ENTER DOS VECES Y TENEMOS SHELL MEJORADA</p><p></p><p>SE BUSCA FLAG</p><p><div class="codebox"><pre><span style="color:#bf2e5e;font-weight:400">find</span> / -name <span style="color:#5ebdab;font-weight:400">&quot;*flag*&quot;</span> <span style="color:#bf2e5e;font-weight:400">2&gt;</span>/dev/null</pre></div></p><p><img src="images/20-1.png" alt="images/20-1.png" /></p><p></p><p>BUSCAR  ARCHIVOS CREADOS POR EL USUARIO ROOT </p><p><div class="codebox"><pre><span style="color:#bf2e5e;font-weight:400">find</span> / -user root -name <span style="color:#5ebdab;font-weight:400">&quot;flag*&quot;</span> <span style="color:#bf2e5e;font-weight:400">2&gt;</span>/dev/null</pre></div></p><p>SE OBTIENE FLAG</p><p></p><p><div class="codebox"><pre><span style="color:#bf2e5e;font-weight:400">cat</span> root/flag.txt<br />ARTEMIS{g1f_upl04d_hunt3r_2026}</pre></div></p><p><img src="images/20-2.png" alt="images/20-2.png" /></p></div>
+</body>
+</html>

