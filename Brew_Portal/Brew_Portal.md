@@ -7,7 +7,7 @@ dificultad: Fácil
 estado: finalizada
 ---
 # Informe de Seguridad:
-Brew Portal
+# Brew Portal
 
 ## 1. Resumen Ejecutivo
 **Puntuación de Riesgo:** Crítico
@@ -26,13 +26,13 @@ El impacto es crítico, ya que este vector de ataque no solo permite la lectura 
 ---
 ## 3. Fase de Reconocimiento
 ### Enumeración de Puertos (Nmap)
-```
+```bash
 sudo nmap -p- --open -sS -sC -sV --min-rate 5000 -vvvv -n -Pn 172.17.0.2
 ```
 - **Puertos abiertos:** 80.
 - **Evidencias:** > [!info] Resultado Nmap > ![](image20260419112255.png)
 ### Enumeración Web
-```
+```bash
 dirsearch -u http://172.17.0.2 -w /usr/share/wordlists/dirb/common.txt -e all
 ```
 
@@ -46,7 +46,7 @@ dirsearch -u http://172.17.0.2 -w /usr/share/wordlists/dirb/common.txt -e all
 ## 4. Análisis y Explotación
 ### Vector de entrada: [[http://172.17.0.2/?page=../flag.txt]]
 - Se buscan vulnerabilidades con nmap
-```
+```bash
 sudo nmap $TARGET -p 80 -sV --script vuln
 ```
 - El análisis muestra un servidor Apache 2.4.54 en Debian con múltiples vulnerabilidades críticas (CVSS 9.8), incluyendo RCE (CVE-2024-38476, CVE-2024-38474) y Request Smuggling (CVE-2023-25690). El vector de entrada principal es la explotación de estos fallos conocidos mediante exploits públicos listados en el reporte.
