@@ -94,9 +94,12 @@ ifconfig
 
 - Se sube el archivo y se obtiene la Reverse Shell
 ![](image20260425083516.png|490)
+
 - **usuario obtenido:** `www-data` 
 - Se procede a mejorar shell
+
 ![](image20260425084359.png)
+
 - **Escalada de privilegios:** - Se utiliza el siguiente comando para detectas un binario SUID mal configurado.
 
 ```bash
