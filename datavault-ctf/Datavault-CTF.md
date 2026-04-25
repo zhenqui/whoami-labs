@@ -1,7 +1,6 @@
 ---
 
 ---
-# Informe de Seguridad:
 ---
 autor: zhuit8
 tipo: writeup
@@ -12,7 +11,7 @@ dificultad: Fácil
 estado: Finalizada
 
 ---
-
+# Informe de Seguridad:
 # Datavault-CTF
 
 ## 1. Resumen Ejecutivo
