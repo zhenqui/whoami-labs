@@ -1,18 +1,19 @@
 ---
 
 ---
+# Informe de Seguridad:
 ---
 autor: zhuit8
 tipo: writeup
 plataforma: whoami-labs
-maquina: datavault-ctf
+maquina: Datavault-CTF
 ip: 172.17.0.2
 dificultad: Fácil
-estado: finalizada
+estado: Finalizada
 
 ---
-# Informe de Seguridad:
-# datavault-ctf
+
+# Datavault-CTF
 
 ## 1. Resumen Ejecutivo
 **Puntuación de Riesgo:** Crítico
