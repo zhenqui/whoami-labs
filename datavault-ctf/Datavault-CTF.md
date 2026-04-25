@@ -114,7 +114,7 @@ find / -user root -perm /4000 2>/dev/null
 
 - El usuario dbbackup pertenece al grupo backupgroup
 
-![](image20260425091636.png|538)
+![](image20260425091636.png)
 
 - Se obtiene usuario dbbackup
 
