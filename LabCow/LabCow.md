@@ -41,7 +41,9 @@ Encontramos el habitual Forbidden en el directorio uploads
 ![](uploads.png)
 
 - **Tecnologías:** [[Apache]] HTTP server 2.4.41
+
 ![](wapa.png)
+
 - **Directorias hallados:**  `/uplodas`.
 
 No se encuntra nada con `dirbaster, gobuster, ffuz` con lo que se procede a enumeración SMB
@@ -142,7 +144,9 @@ stty rows 38 columns 116
 ```bash
 find / -user root -perm /4000 2>/dev/null
 ```
+
 - Técnica utilizada [[GTFOBins]]
+
 ![](date.png)
 
 Por una mala configuración del binario date, podemos hacer lectura de ficheros:
